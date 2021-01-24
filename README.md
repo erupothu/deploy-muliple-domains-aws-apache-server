@@ -17,7 +17,8 @@ deploy-muliple-domains-in-same-apache-server
 - open nano editor or vi editor and map the domains blog, profile etc domains to ip address
 - `$ nano /etc/hosts`
 
-`127.0.0.1 localhost
+`
+127.0.0.1 localhost
 13.127.25.25 example.com blog.example.com profile.example.com
 
 # The following lines are desirable for IPv6 capable hosts
@@ -40,10 +41,10 @@ ff02::3 ip6-allhosts
   </body>
  </html>`
  
- -- `$ mkdir profile`
- -- `$ cd profile`
+`$ mkdir profile`
+`$ cd profile`
   - create index.html file
- -- `$ nano index.html`
+`$ nano index.html`
  `<html>
   <body>
     welcome to My Profile
@@ -51,8 +52,9 @@ ff02::3 ip6-allhosts
  </html>`
  
 - Create apache conf file for domains and subdomains
-- `$ cd /etc/apache2/sites-available`
-- `$ nano blog.example.conf`
+`$ cd /etc/apache2/sites-available`
+`$ nano blog.example.conf`
+
 `<VirtualHost *:80>
         ServerAdmin webmaster@localhost
 	      ServerName blog.example.com
@@ -62,7 +64,9 @@ ff02::3 ip6-allhosts
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>`
+
 - nano profile.example.conf
+
 `<VirtualHost *:80>
         ServerAdmin webmaster@localhost
 	      ServerName profile.example.com
@@ -74,12 +78,13 @@ ff02::3 ip6-allhosts
 </VirtualHost>`
 
 - enable both confs and disable default conf file
- -- `$ a2dissite 000default.conf
- -- $ a2ensite blog.example.conf
- -- $ a2ensite profile.example.conf`
+
+`$ a2dissite 000default.conf
+ $ a2ensite blog.example.conf
+ $ a2ensite profile.example.conf`
  
  - Restart Apache server
- -- `$ sudo service apache2 restart`
+`$ sudo service apache2 restart`
  
  #### Now Check in you browser
  - [blog.example.com](#) and [profile.example.com](#)
