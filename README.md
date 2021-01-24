@@ -38,7 +38,7 @@ ff02::3 ip6-allhosts
  
  `$ nano index.html`
  
-```
+```html
 <html>
   <body>
     welcome to My Blog
@@ -51,7 +51,7 @@ ff02::3 ip6-allhosts
   - create index.html file
 `$ nano index.html`
 
-```
+```html
 <html>
   <body>
     welcome to My Profile
