@@ -49,7 +49,7 @@ ff02::3 ip6-allhosts
 - `$ mkdir profile`
 - `$ cd profile`
   - create index.html file
-`$ nano index.html`
+- `$ nano index.html`
 
 ```html
 <html>
@@ -63,7 +63,7 @@ ff02::3 ip6-allhosts
 - `$ cd /etc/apache2/sites-available`
 - `$ nano blog.example.conf`
 
-```
+```xml
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
 	      ServerName blog.example.com
@@ -77,7 +77,7 @@ ff02::3 ip6-allhosts
 
 - nano profile.example.conf
 
-```
+```xml
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
 	      ServerName profile.example.com
