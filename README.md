@@ -5,7 +5,7 @@ deploy-muliple-domains-in-same-apache-server
 #### Launch AWS EC2 instance
 - Login to aws (username and password)
 - launch AWS EC2 insatance (generate .pem file)
-- using generated .pem file login to server(example in ubuntu: ssh -i example.pem ubuntu@ip_address (example: ip_address = 13.127.25.25)
+- using generated .pem file login to server(example in ubuntu: `$ssh -i example.pem ubuntu@ip_address` (example: ip_address = 13.127.25.25)
 
 #### Register Domain name in Route53
 - Register Domain name from aws Route53 or using GoDaddy Domain in Hosted Zone by using namespace.
