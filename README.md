@@ -82,7 +82,7 @@ ff02::3 ip6-allhosts
  -- `$ sudo service apache2 restart`
  
  #### Now Check in you browser
- - [blog.example.com] and [profile.example.com]
+ - (blog.example.com) and [profile.example.com]
 
 
 
