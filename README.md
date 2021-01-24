@@ -8,14 +8,15 @@ deploy-muliple-domains-in-same-apache-server
 - using generated .pem file login to server(example in ubuntu: `$ssh -i example.pem ubuntu@ip_address` (example: ip_address = 13.127.25.25)
 
 #### Register Domain name in Route53
-- Register Domain name from aws Route53 or using GoDaddy Domain in Hosted Zone by using namespace.
+- Register Domain name from **AWS Route53** or using **GoDaddy** Domain in Hosted Zone by using namespace.
 - create domain and subdomain in Hosted zones map map instance ip_address (example: create records like example.come, blog.example.com, profile.example.com map to 13.127.25.25).
 
 #### install apache2 in lauched EC2 instance
 - Install Apache Server
-- sudo apt install apache2
+- `$ sudo apt install apache2`
 - open nano editor or vi editor and map the domains blog, profile etc domains to ip address
-- nano /etc/hosts
+- `$ nano /etc/hosts`
+
 `127.0.0.1 localhost
 13.127.25.25 example.com blog.example.com profile.example.com
 
@@ -28,21 +29,21 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 `
 - Create folders and add index.html code
- -- cd /var/www/html
- -- mkdir blog
- cd blog
+ -- `$ cd /var/www/html`
+ -- `$ mkdir blog`
+ -- `$ cd blog`
  - create index.html file
- -- nano index.html
+ -- `$ nano index.html`
  `<html>
   <body>
     welcome to My Blog
   </body>
  </html>`
  
- -- mkdir profile
- -- cd profile
+ -- `$ mkdir profile`
+ -- `$ cd profile`
   - create index.html file
- -- nano index.html
+ -- `$ nano index.html`
  `<html>
   <body>
     welcome to My Profile
@@ -50,8 +51,8 @@ ff02::3 ip6-allhosts
  </html>`
  
 - Create apache conf file for domains and subdomains
-- cd /etc/apache2/sites-available
-- nano blog.example.conf
+- `$ cd /etc/apache2/sites-available`
+- `$ nano blog.example.conf`
 `<VirtualHost *:80>
         ServerAdmin webmaster@localhost
 	      ServerName blog.example.com
@@ -73,15 +74,15 @@ ff02::3 ip6-allhosts
 </VirtualHost>`
 
 - enable both confs and disable default conf file
- -- a2dissite 000default.conf
- -- a2ensite blog.example.conf
- -- a2ensite profile.example.conf
+ -- `$ a2dissite 000default.conf
+ -- $ a2ensite blog.example.conf
+ -- $ a2ensite profile.example.conf`
  
  - Restart Apache server
- -- sudo service apache2 restart
+ -- `$ sudo service apache2 restart`
  
  #### Now Check in you browser
- - blog.example.com and profile.example.com
+ - [blog.example.com] and [profile.example.com]
 
 
 
