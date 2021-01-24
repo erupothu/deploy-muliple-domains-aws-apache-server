@@ -13,15 +13,14 @@ deploy-muliple-domains-in-same-apache-server
 
 #### install apache2 in lauched EC2 instance
 - Install Apache Server
-- `$ sudo apt install apache2`
+`$ sudo apt install apache2`
 - open nano editor or vi editor and map the domains blog, profile etc domains to ip address
-- `$ nano /etc/hosts`
+`$ nano /etc/hosts`
 
 `
 127.0.0.1 localhost
 13.127.25.25 example.com blog.example.com profile.example.com
 
-# The following lines are desirable for IPv6 capable hosts
 ::1 ip6-localhost ip6-loopback
 fe00::0 ip6-localnet
 ff00::0 ip6-mcastprefix
